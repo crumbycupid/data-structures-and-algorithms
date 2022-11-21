@@ -9,11 +9,7 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  var max = maxInArray.reduce(
-    value)
-  );
-  // Solution code here...
-  return maxInArray;
+  return arr.reduce((max, num) => num.max ? num : max, arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,13 +19,14 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,7 +38,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  return Object.keys(obj).includes(value) || Object.values(obj).includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,7 +135,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let kids = 0;
+  arr.forEach(person => {
+    if (person.name === character) {
+      Object.keys(person).forEach((key, idx) => {
+        if (key === 'children') {
+          let values = Object.values(person);
+          kids = values[idx].length;
+        }
+      });
+    }
+  });
 
+  return kids ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
