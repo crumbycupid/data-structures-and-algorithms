@@ -8,8 +8,12 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str) {
+
   let splitStr = str.split('');
   return splitStr.splice(splitStr.length - 10);
+
+  // Solution code here...
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,7 +31,11 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
+
   return Math.max(...matrix.flat());
+
+  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,9 +53,13 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
+
   return matrix.flat().reduce((acc, value) => {
     return acc + value;
   }, 0);
+
+  // Solution code here...
+
 };
 
 
@@ -74,10 +86,24 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+
   return stores.reduce((acc, store) => {
     store.forEach((hourlySales, index) => acc[index] = acc[index] + hourlySales);
     return acc;
   }, Array(stores[0].length).fill(0));
+
+
+  // Solution code here...
+  let hourlyTotalArr = [];
+  for (let i in stores) {
+    let hourlyTotal = 0;
+    for (let j in stores) {
+      hourlyTotal += stores[j][i];
+    }
+    hourlyTotalArr.push(hourlyTotal);
+  }
+
+  return hourlyTotalArr;
 
 };
 
@@ -92,6 +118,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
+
   let newSales = [];
   for (let i = 0; i < hours.length; i++) {
     newSales.push({
@@ -102,6 +129,12 @@ const salesData = (hours, data) => {
 };
 
 /*  ------------------------------------------------------------------------------------------------
+
+  // Solution code here...
+};
+
+/* ------------------------------------------------------------------------------------------------
+
 CHALLENGE 6
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
