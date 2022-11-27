@@ -25,9 +25,7 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  var newArr = [starWarsArr];
-  newArr = starWarsPeople.height.sort();
-  return newArr;
+  return starWarsArr.sort((a, b) => b.height - a.height);
 };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -36,7 +34,8 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +45,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +63,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i, str.length));
+  }
   return result;
 };
 
@@ -77,7 +78,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
 
 
@@ -124,7 +125,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(element => {
+    let idx1 = element.indexOf(' ');
+    let ingredientOnly = element.slice(idx1 + 1, element.length);
+    let idx2 = ingredientOnly.indexOf(' ');
+    ingredientOnly = ingredientOnly.slice(idx2 + 1, ingredientOnly.length);
+    result.push(ingredientOnly);
+  });
   return result;
 };
 
