@@ -34,6 +34,10 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
+
+
+  // Solution code here...
+
   arr.splice(idx, 3);
   return arr;
 };
@@ -45,7 +49,12 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
+
   return arr.join(' ');
+
+  // Solution code here...
+  return arr.join('');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,17 +72,17 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  let i = 0;
-  result.push(str);
-  while(i < str.length) {
-    let split = result[i].split('');
-    split.splice(0,1);
-    result.push(split.join(''));
-    i++;
+
   }
+
+  // Solution code here...
+  for (let i = 0; i < str.length + 1; i++) {
+    result.push(str.slice(i));
+  }
+  result.push('');
+
   return result;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -83,6 +92,10 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
+
+
+  // Solution code here...
+
   return arr.split('');
 };
 
@@ -129,6 +142,7 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
+
   let result = [];
   recipe.ingredients.forEach(element => {
     let idx1 = element.indexOf(' ');
@@ -138,6 +152,12 @@ const listFoods = (recipe) => {
     result.push(ingredientOnly);
   });
   return result;
+
+  return recipe.ingredients.map(item => {
+    let firstSlice = item.slice(item.indexOf('') +1);
+    return firstSlice.slice(firstSlice.indexOf('') +1);
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
