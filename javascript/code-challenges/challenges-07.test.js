@@ -72,15 +72,14 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-
+  let i = 0;
+  result.push(str);
+  while (i < str.length) {
+    let split = result[i].split('');
+    split.splice(0, 1);
+    result.push(split.join(''));
+    i++;
   }
-
-  // Solution code here...
-  for (let i = 0; i < str.length + 1; i++) {
-    result.push(str.slice(i));
-  }
-  result.push('');
-
   return result;
 };
 /* ------------------------------------------------------------------------------------------------
@@ -154,8 +153,8 @@ const listFoods = (recipe) => {
   return result;
 
   return recipe.ingredients.map(item => {
-    let firstSlice = item.slice(item.indexOf('') +1);
-    return firstSlice.slice(firstSlice.indexOf('') +1);
+    let firstSlice = item.slice(item.indexOf('') + 1);
+    return firstSlice.slice(firstSlice.indexOf('') + 1);
   });
 
 };
