@@ -54,21 +54,17 @@ let characters = [
 
 const sortByChildren = (charArray) => {
 
-  return charArray.sort((charA, charB) => {
-    if (charA.children.length === charB.children.length) {
-      return charA.name < charB.name ? -1 : 1;
-    }
-    return charA.children.length - charB.children.length;
-
   return charArray.sort((a, b) => {
-    if(a.children.length === b.children.length) {
-      if(a.house > b.house) {
+    if (a.children.length === b.children.length) {
+      if (a.house > b.house) {
+        return 1;
+      }
+      else {
         return -1;
       }
-    }else{
+    } else {
       return a.children.length - b.children.length;
     }
-
   });
 };
 
@@ -80,10 +76,6 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-
-  let regexPattern = /w/;
-  return regexPattern.test(str);
-
   return /w/g.test(str);
 
 };
@@ -101,11 +93,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-
-  let regexPattern = /[0-9]/;
-  return regexPattern.test(input);
-
-  return /[0-9]g.test(input);
+  return /[0-9]/g.test(input);
 
 };
 
@@ -117,10 +105,6 @@ Write a function named containsWorld that takes in a string or number of any len
 ------------------------------------------------------------------------------------------------ */
 
 const containsWorld = (input) => {
-
-  let regexPattern = /world/;
-  return regexPattern.test(input);
-
   return /world/g.test(input);
 
 };
@@ -148,13 +132,9 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-
-  let newCities = /^[A-J]/;
-  return arr.filter(element => newCities.test(element));
-
   return arr.filter(word => {
-    return /^[A-J/g.test(word)];
-  })
+    return /^[A-J]/g.test(word);
+  });
 
 };
 
