@@ -79,10 +79,6 @@ const divisibleByFiveTwoToThePower = (input) => {
 
   return input.map(arrs => arrs.filter(item=> typeof item === 'number' && !(item % 5))).map(arr => arr.map(item => Math.pow(2, item)));
 
-  return input.map(arr => {
-    return arr.filter(num => typeof num === 'number' && num %5 === 0).map(cell => Math.pow(2, cell));
-  });
-
 };
 
 /* ------------------------------------------------------------------------------------------------
