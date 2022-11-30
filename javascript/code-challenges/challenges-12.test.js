@@ -67,8 +67,12 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
+
   let newEmail = /^([A-Za-z0-9]+|[A-Za-z0-9]+[.][A-za-z0-9]+)[@][A-Za-z]+(.net|.com|.org)$/;
-  return newEmail.test(email);
+
+ /@[a-zA-Z0-9]+(.com|.net|.org)$
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6

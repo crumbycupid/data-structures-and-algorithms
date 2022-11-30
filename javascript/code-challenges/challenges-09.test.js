@@ -9,7 +9,16 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
+
+  return arr.reduce((acc, value) => {
+    if (value > acc) {
+      acc = value;
+    }
+    return acc;
+  });
+
   return arr.reduce((max, num) => num.max ? num : max, arr[0]);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,7 +47,11 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
+
+  return Object.values(obj).includes(value);
+
   return Object.keys(obj).includes(value) || Object.values(obj).includes(value);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +74,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(arr => arr[0] + ': ' + arr[1]);
 };
 
 
@@ -117,7 +130,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach(obj => houses.push(obj.house));
   return houses;
 };
 
@@ -134,6 +147,11 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
+
+  let charObj = arr.find(obj => obj.name === character);
+  let charObjValues = Object.values(charObj);
+  return charObjValues.some(element => element instanceof Array);
+
   // Solution code here...
   let kids = 0;
   arr.forEach(person => {
@@ -146,6 +164,7 @@ const hasChildrenValues = (arr, character) => {
       });
     }
   });
+
 
   return kids ? true : false;
 };
