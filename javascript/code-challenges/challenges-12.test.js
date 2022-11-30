@@ -7,8 +7,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  let regex = /0/g;
-  return string.replace(regex, 'zero');
+  return string.replace(/0/g, 'zero');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,8 +19,7 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  let regex = /^\d{4}$/g;
-  return regex.test(pin);
+  return /^\d{4}$/g.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,8 +31,7 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  let newWord = /^[A-za-z]{5,10}$/;
-  return newWord.test(word);
+  return /^[a-zA-Z]{5,10}$/g.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,8 +43,7 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  let num = /[A-za-z]+[0-9]+/;
-  return num.test(string);
+  return /[A-za-z]+[0-9]+/g.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,10 +63,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-
-  let newEmail = /^([A-Za-z0-9]+|[A-Za-z0-9]+[.][A-za-z0-9]+)[@][A-Za-z]+(.net|.com|.org)$/;
-
- /@[a-zA-Z0-9]+(.com|.net|.org)$
+  return /^\w\w*(.|)\w\w*@\w*(.net|.com|.org)\b/g.test(email);
 };
 
 
@@ -96,8 +89,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let phoneNum = /^([0-9]{3}|\([0-9]{3}\))( |-|)[0-9]{3}( |-|)[0-9]{4}$/;
-  return phoneNum.test(phoneNum);
+  return /^([0-9]{3}|\([0-9]{3}\))( |-|)[0-9]{3}( |-|)[0-9]{4}$/g.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
