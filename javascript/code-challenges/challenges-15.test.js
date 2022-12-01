@@ -159,7 +159,27 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let detected = false;
+  board.forEach(arr => {
+    if(helpCheck(...arr)){
+      detected = true;
+    }
+  });
+  board[0].forEach((element, index) => {
+    if(helpCheck(element, board[1][index], board[2][index])){
+      detected = true;
+    }
+  });
+  if(helpCheck(board[2][0], board[1][1], board[0][2]) || helpCheck(board[0][0], board[1][1], board[2][2])){
+    detected = true;
+  }
+  return detected;
+};
+const helpCheck = (pointA, pointB, pointC) => {
+  if (pointA === '' || pointB ==='' || pointC === ''){
+    return false;
+  }
+  return pointA === pointB && pointA === pointC;
 };
 
 /* ------------------------------------------------------------------------------------------------
