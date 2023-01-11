@@ -20,6 +20,9 @@ To run your tests
 
 thanks from, Aubrey Corsetti, Todd Wolden, Kenny
 
+
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+Insert Shift Array
+
+<img width="1440" alt="Screenshot 2023-01-11 at 1 35 01 AM" src="https://user-images.githubusercontent.com/114770792/211735099-4b51786a-6f02-4019-a629-c308748c620a.png">
