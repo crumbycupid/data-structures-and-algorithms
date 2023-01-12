@@ -26,3 +26,6 @@ thanks from, Aubrey Corsetti, Todd Wolden, Kenny
 Insert Shift Array
 
 <img width="1440" alt="Screenshot 2023-01-11 at 1 35 01 AM" src="https://user-images.githubusercontent.com/114770792/211735099-4b51786a-6f02-4019-a629-c308748c620a.png">
+
+
+![Code Challenge 3-3](https://user-images.githubusercontent.com/114770792/211962339-761b7da1-72ff-4a39-8524-9e7b6816ecc0.jpg)
