@@ -12,4 +12,14 @@ public class LinkedListTest
       System.out.println(sut);
       assertTrue(true);
     }
+    @Test void testInsert(){
+    LinkedList sut = new LinkedList();
+    sut.insert(4);
+    sut.insert(3);
+    }
+
+    @Test boolean testIncludes(){
+    LinkedList sut = new LinkedList();
+
+    }
 }
