@@ -33,7 +33,7 @@ public class LinkedList
     newNode.value = value;
     Node curr = head;
 
-    if (head = null){
+    if (head == null){
       head = newNode;
     }else{
       curr = head;
@@ -43,26 +43,30 @@ public class LinkedList
   }
 
     public void insertBefore(int value int newNodeValue){
-      Node newNode = new Node();
-      Node curr = head;
+      Node newNodeA = new Node();
+      Node currA = head;
       newNode.value = newNodeValue;
 
       if(head.value == value){
-        newNode.next = head;
-        head = newNode;
-      } while(curr.next !null && curr.next.value !=value){
-        curr = curr.next;
-      } if(curr.next != null){
-        Node insert = curr.next;
-        curr.next = newNode;
-        newNode.next = insert;
+        newNodeA.next = head;
+        head = newNodeA;
+      } while(currA.next != null && currA.next.value !=value){
+        curr = currA.next;
+      } if(currA.next != null){
+        Node insert = currA.next;
+        currA.next = newNodeA;
+        newNodeA.next = insert;
         return;
       }
+    }
+    public void kValue(int value int k){
+
     }
 
     public void insertAfter(int valueA, int valueB){
       Node newNode =
     }
+
 
   @Override
   public String toString()
