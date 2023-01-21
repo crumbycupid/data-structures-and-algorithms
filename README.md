@@ -18,7 +18,7 @@ To run your tests
 - run `npm test` to run all of the tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
-Help from, Aubrey Corsetti, Todd Wolden, Kenny, Sharina S
+Help from, Aubrey Corsetti, Todd Wolden, Kenny, Sharina S, Ben Mills
 
 
 ### 401 Data Structures, Code Challenges
