@@ -59,8 +59,14 @@ public class LinkedList
         return;
       }
     }
-    public void kValue(int value int k){
+    public void kValue(int k){
+      Node currB = head;
+      int listLength = 0;
 
+      while (currB != null){
+        listLength += 1;
+        currB = currB.next;
+      }
     }
 
     public void insertAfter(int valueA, int valueB){
