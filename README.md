@@ -30,3 +30,6 @@ Insert Shift Array
 <img width="1440" alt="Screenshot 2023-01-20 at 2 50 51 AM" src="https://user-images.githubusercontent.com/114770792/213644678-27c491df-ebd3-443a-9ea8-08fafb6c605f.png">
 
 ![code challenge 16](https://user-images.githubusercontent.com/114770792/215694734-8c5690c5-2a2a-4c61-b30e-b1a45c318697.jpg)
+
+
+![code challenge 17](https://user-images.githubusercontent.com/114770792/215936717-2f2cdf6f-1b97-4b47-b2e7-12d6f1676d7d.jpg)
