@@ -1,5 +1,7 @@
 package datastructures.hashmap;
 
+import datastructures.trees.Node;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,7 +11,7 @@ public class HashMap<K, V> {
   ArrayList<LinkedList<HashMapPair<K, V>>> bucketArrayList; // using ArrayList instead of array so we can instantiate with a parameterized type
   int size;
 
-  public HashMap(int size) {
+  public HashMap() {
     if(size < 1){
       throw new IllegalArgumentException("Hashmap size must be greater than 1");
     }
@@ -22,10 +24,22 @@ public class HashMap<K, V> {
     }
   }
 
-  public void set(K key, V value){
-    // TODO: implement me
-
-  }
+  public void set(String key, boolean value){
+    int index = hash(key);
+    HashMapPair<K, V> newPar = new HashMapPair<>(key, value);
+    if(bucketArrayList.get(index) !=null){
+      LinkedList<HashMapPair<K, V>> list = bucketArrayList.get(index);
+      Node<HashMapPair<K, V>> current;
+//      current = list.head;
+//      while (current !=null && !current.value.equals(value)){
+//        current.value.setValue(value);
+//        return;
+      }
+    }
+//    if (size == bucketArrayList.size()){
+//    }
+//
+//  }
 
   public V get(K key){
     // TODO: implement me
@@ -37,7 +51,7 @@ public class HashMap<K, V> {
     return null;
   }
 
-  public boolean contains(){
+  public boolean contains(String current){
     // TODO: implement me
     return false;
   }
@@ -46,7 +60,7 @@ public class HashMap<K, V> {
   // If you really want to hash things yourself, look at https://stackoverflow.com/a/113600/16889809
   // Don't use Character! Don't use Object! Don't use any object you have not overridden equals() and hashCode() on!
   // If you do this, things that should collide, won't, because Object.hashCode() is not good
-  // Protip: Testing collisions is easy with Integer, because Integer hashes to its own value
+  // ProTip: Testing collisions is easy with Integer, because Integer hashes to its own value
   public int hash(K key){
     return Math.abs(key.hashCode()) % size;
   }
