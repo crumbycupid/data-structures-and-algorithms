@@ -2,12 +2,12 @@ package datastructures.trees;
 import java.util.*;
 
 
-public class trees <T> {
+public class Trees <T> {
   public Node<T> root;
-  public trees(){
+  public Trees(){
     root = null;
   }
-  public trees(Node<T> root){
+  public Trees(Node<T> root){
     this.root = root;
   }
   public List<T> breadthFirstTraverse (Node<T> root) {
