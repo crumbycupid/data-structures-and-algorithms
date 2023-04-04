@@ -8,13 +8,10 @@ public class LinkedList
   public void insert(int value)
   {
     Node newNode = new Node(value);
-    if (head == null) {
-      head = newNode;
-    } else
-      {
-        newNode.next = this.head;
-        head = newNode;
+    if (head != null) {
+      newNode.next = this.head;
     }
+    head = newNode;
   }
   public boolean includes(int value)
   { Node curr = head;
@@ -31,15 +28,16 @@ public class LinkedList
   public void Append(int value){
     Node newNode = new Node();
     newNode.value = value;
-    Node curr = head;
+    Node curr;
 
     if (head == null){
       head = newNode;
-    }else{
+    } else {
       curr = head;
-      while (curr.next !=null) {
+      while (curr.next != null) {
         curr.next = newNode;
       }
+    }
   }
 
     public void insertBefore(int value int newNodeValue){
@@ -74,11 +72,11 @@ public class LinkedList
     }
 
 
-  @Override
-  public String toString()
-  {
-    return "hello";  // TODO: implement me
-  }
+    @Override
+    public String toString()
+    {
+      return "hello";  // TODO: implement me
+    }
 }
 
 
