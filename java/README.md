@@ -76,3 +76,6 @@ You will be working in the `codechallenges` subfolder for all of your algorithm 
 #### Live Tests
 
 Create a github action to automatically run all of your tests as you check in your code. These results should match your own, and will be readily found on the  **Actions** tab.
+
+![Code Challenge 3-3](https://user-images.githubusercontent.com/114770792/215392078-3e1febb0-542a-4a06-b8f0-c8f2b8761cba.jpg)
+
