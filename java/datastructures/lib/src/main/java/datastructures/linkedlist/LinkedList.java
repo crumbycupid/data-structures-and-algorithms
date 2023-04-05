@@ -51,6 +51,8 @@ public class LinkedList
         curr.next = newNode;
       }
     }
+    toString += null;
+    return toString;
   }
 
   public void insertBefore(int value, int newNodeValue){
