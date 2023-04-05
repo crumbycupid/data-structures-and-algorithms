@@ -40,23 +40,30 @@ public class LinkedList
     }
   }
 
-    public void insertBefore(int value int newNodeValue){
-      Node newNodeA = new Node();
-      Node currA = head;
-      newNode.value = newNodeValue;
+    public void insertBefore(int value, int newValue){
+      Node prev = null;
+      Node curr = head;
 
-      if(head.value == value){
-        newNodeA.next = head;
-        head = newNodeA;
-      } while(currA.next != null && currA.next.value !=value){
-        curr = currA.next;
-      } if(currA.next != null){
-        Node insert = currA.next;
-        currA.next = newNodeA;
-        newNodeA.next = insert;
-        return;
+      if (head != null) {
+        while (curr != null) {
+          if (curr.value == value) {
+            Node before = new Node(newValue);
+            before.next = curr;
+
+            if (prev != null) {
+              prev.next = before;
+            } else {
+              head = before;
+            }
+            return;
+          }
+        }
+        prev = curr;
+        curr = curr.next;
       }
     }
+
+
     public void kValue(int k){
       Node currB = head;
       int listLength = 0;
@@ -67,15 +74,28 @@ public class LinkedList
       }
     }
 
-    public void insertAfter(int valueA, int valueB){
-      Node newNode =
+    public void insertAfter(int value, int newValue){
+      Node newNode = new Node(value);
+      Node curr = head;
+      while(curr !=null){
+        if(curr.value == value){
+          newNode.next = curr.next;
+          curr.next = newNode;
+        }
+        curr = curr.next;
+      }
     }
 
 
     @Override
     public String toString()
-    {
-      return "hello";  // TODO: implement me
+    { Node curr = head;
+      String output = "";
+      while(curr != null){
+        output += "{ " + curr.value + " }";
+      }
+      output += "NULL";
+      return output;
     }
 }
 

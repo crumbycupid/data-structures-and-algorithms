@@ -18,7 +18,7 @@ To run your tests
 - run `npm test` to run all of the tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
-Help from, Aubrey Corsetti, Todd Wolden, Kenny, Sharina S, Ben Mills
+thanks from, Aubrey Corsetti, Todd Wolden, Kenny
 
 
 ### 401 Data Structures, Code Challenges
@@ -27,11 +27,5 @@ Insert Shift Array
 
 <img width="1440" alt="Screenshot 2023-01-11 at 1 35 01 AM" src="https://user-images.githubusercontent.com/114770792/211735099-4b51786a-6f02-4019-a629-c308748c620a.png">
 
-<img width="1440" alt="Screenshot 2023-01-20 at 2 50 51 AM" src="https://user-images.githubusercontent.com/114770792/213644678-27c491df-ebd3-443a-9ea8-08fafb6c605f.png">
 
-![code challenge 16](https://user-images.githubusercontent.com/114770792/215694734-8c5690c5-2a2a-4c61-b30e-b1a45c318697.jpg)
-
-
-![code challenge 17](https://user-images.githubusercontent.com/114770792/215936717-2f2cdf6f-1b97-4b47-b2e7-12d6f1676d7d.jpg)
-
-![Code Challenge 38](https://user-images.githubusercontent.com/114770792/222350793-2729e4b8-c674-4b15-9b02-588108dc9c3d.jpg)
+![Code Challenge 3-3](https://user-images.githubusercontent.com/114770792/211962339-761b7da1-72ff-4a39-8524-9e7b6816ecc0.jpg)
