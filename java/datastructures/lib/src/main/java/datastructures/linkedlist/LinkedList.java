@@ -38,5 +38,45 @@ public class LinkedList
     toString += null;
     return toString;
   }
+
+    public void insertBefore(int value int newNodeValue){
+      Node newNodeA = new Node();
+      Node currA = head;
+      newNode.value = newNodeValue;
+
+      if(head.value == value){
+        newNodeA.next = head;
+        head = newNodeA;
+      } while(currA.next != null && currA.next.value !=value){
+        curr = currA.next;
+      } if(currA.next != null){
+        Node insert = currA.next;
+        currA.next = newNodeA;
+        newNodeA.next = insert;
+        return;
+      }
+    }
+    public void kValue(int k){
+      Node currB = head;
+      int listLength = 0;
+
+      while (currB != null){
+        listLength += 1;
+        currB = currB.next;
+      }
+    }
+
+    public void insertAfter(int valueA, int valueB){
+      Node newNode =
+    }
+
+
+    @Override
+    public String toString()
+    {
+      return "hello";  // TODO: implement me
+    }
 }
+
+
 
