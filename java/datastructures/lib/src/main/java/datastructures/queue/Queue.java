@@ -11,7 +11,7 @@ public class Queue<T>
 
   public Queue(){}
 
-  void enqueue(T valueToEnqueue)
+  public T enqueue(T valueToEnqueue)
   {
     Node<T> newNode = new Node<>(valueToEnqueue);
     if
@@ -22,9 +22,10 @@ public class Queue<T>
       back = newNode;
       size ++;
     }
+    return valueToEnqueue;
   }
 
-  T dequeue()
+  public T dequeue()
   {
     T output = front.value;
     front = front.next;
@@ -32,12 +33,12 @@ public class Queue<T>
     return output;
   }
 
-  T peek()
+  public T peek()
   {
     return front.value;
   }
 
-  boolean isEmpty()
+  public boolean isEmpty()
   {
     return size == 0;
   }

@@ -1,7 +1,5 @@
 package datastructures.stack;
 
-import datastructures.stack.Node;
-
 public class Stack<T>
 {
   private Node<T> top = null;
@@ -10,7 +8,7 @@ public class Stack<T>
     return size;
   }
 
-  void push(T valueToPush)
+  public void push(T valueToPush)
   {
     Node<T> newTop = new Node<>(valueToPush);
     newTop.next = top;
@@ -18,7 +16,7 @@ public class Stack<T>
     size++;
   }
 
-  T pop()
+  public T pop()
   {
     Node<T> temp = top;
     top = top.next;
@@ -26,15 +24,15 @@ public class Stack<T>
     return temp.value;
   }
 
-  T peek()
+  public T peek()
   {
     return top.value;
   }
 
-  boolean isEmpty()
+  public boolean isEmpty()
   {
     return size == 0;
   }
 }
 
-![image](blob:https://miro.com/fae1c54a-13c1-48fe-b94e-b138eb403b28)
+//![image](blob:https://miro.com/fae1c54a-13c1-48fe-b94e-b138eb403b28)
