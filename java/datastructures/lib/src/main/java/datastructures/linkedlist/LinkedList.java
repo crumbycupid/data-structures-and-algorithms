@@ -2,6 +2,8 @@ package datastructures.linkedlist;
 
 import datastructures.linkedlist.Node;
 
+import java.security.SecureRandom;
+
 public class LinkedList
 {
   Node head = null;
@@ -25,6 +27,17 @@ public class LinkedList
     return false;
   }
 
+  @Override
+  public String toString() {
+    Node curr = head;
+    String toString = "";
+    while (curr != null) {
+      toString += "{ " + curr.value + " }";
+    }
+    toString += null;
+    return toString;
+  }
+
   public void Append(int value){
     Node newNode = new Node();
     newNode.value = value;
@@ -40,43 +53,52 @@ public class LinkedList
     }
   }
 
-    public void insertBefore(int value int newNodeValue){
-      Node newNodeA = new Node();
-      Node currA = head;
-      newNode.value = newNodeValue;
+  public void insertBefore(int value, int newNodeValue){
+    Node curr = head;
+    Node prev = null;
 
-      if(head.value == value){
-        newNodeA.next = head;
-        head = newNodeA;
-      } while(currA.next != null && currA.next.value !=value){
-        curr = currA.next;
-      } if(currA.next != null){
-        Node insert = currA.next;
-        currA.next = newNodeA;
-        newNodeA.next = insert;
-        return;
+    if(head != null){
+      while(curr != null){
+        if(curr.value == value){
+          Node before = new Node(newNodeValue);
+          before.next = curr;
+
+          if(prev != null){
+            prev.next = before;
+          }else {
+            head = before;
+          }
+          return;
+        }
       }
     }
-    public void kValue(int k){
-      Node currB = head;
-      int listLength = 0;
+  }
+  public int kValue(int k){
+    Node curr = head;
+    int value = 0;
 
-      while (currB != null){
-        listLength += 1;
-        currB = currB.next;
+    while (curr != null){
+      curr = curr.next;
+      value +=1;
+    }
+    if(value < k)
+      curr = head;
+      for (int i = 1; i < value - k + 1; i++)
+        curr = curr.next;
+      return value;
+  }
+
+  public void insertAfter(int value, int newValue){
+    Node newNode = new Node(value);
+    Node curr = head;
+    while (curr != null){
+      if(curr.value == value){
+        newNode.next = curr.next;
+        curr.next = newNode;
       }
+      curr = curr.next;
     }
-
-    public void insertAfter(int valueA, int valueB){
-      Node newNode =
-    }
-
-
-    @Override
-    public String toString()
-    {
-      return "hello";  // TODO: implement me
-    }
+  }
 }
 
 
