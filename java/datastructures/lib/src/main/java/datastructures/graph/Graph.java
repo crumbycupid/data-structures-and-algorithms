@@ -1,8 +1,13 @@
 package datastructures.graph;
 
-import java.net.CookieManager;
+import datastructures.linkedlist.Node;
+
+import datastructures.graph.Edge;
+import datastructures.graph.Vertex;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<T>> {
 
@@ -15,8 +20,12 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
 
   public Vertex<T> addVertex(T value)  // addNode()
   {
-    // TODO: implement me
-    return null;
+    Vertex<T> newVertex = new Vertex<>(value);
+    if(adjacencyLists.get(newVertex) == null){
+      adjacencyLists.put(newVertex, null);
+      numberOfVertices ++;
+    }
+    return newVertex;
   }
 
   public void addEdge(Vertex<T> start, Vertex<T> destination)
@@ -26,20 +35,37 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
 
   public void addEdge(Vertex<T> start, Vertex<T> destination, int weight)
   {
-    // TODO: implement me
+    Edge<T> newEdge = new Edge<>(destination, weight);
+    if(adjacencyLists.get(start) == null){
+      LinkedList<Edge<T>> newLinkedList= new LinkedList<>();
+      newLinkedList.add(newEdge);
+      adjacencyLists.put(start, newLinkedList);
+    }else {
+      LinkedList<Edge<T>> existingLinkedList = adjacencyLists.get(start);
+      existingLinkedList.add(newEdge);
+      adjacencyLists.put(start, existingLinkedList);
+    }
   }
 
   public LinkedList<Vertex<T>> getVertices()  // getNodes()
   {
-    // TODO: implement me
-    return null;
+    LinkedList<Vertex<T>> list = new LinkedList<>();
+    for (Vertex<T> vertex : adjacencyLists.keySet()){
+      list.add(vertex);
+    }
+    return list;
   }
 
-  public LinkedList<Edge<T>> getNeighbors(Vertex<T> vertex)
-  {
-    // TODO: implement me
-    return null;
-  }
+//  public LinkedList<Edge<T>> getNeighbors(Vertex<T> vertex)
+//  {
+//    LinkedList<Edge<T>> list = new LinkedList<>();
+//    LinkedList<Edge<T>> edgeLinkedList = adjacencyLists.get(vertex);
+//    if(edgeLinkedList !=null){
+//      Node current;
+//      current = edgeLinkedList.
+//    }
+//    return list;
+//  }
 
 
 
